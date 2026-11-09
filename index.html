@@ -1,226 +1,181 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Collection Experiment</title>
-
+  <title>What Is Valuable To You?</title>
   <style>
     body {
-      font-family: Futura, "Century Gothic", Arial, sans-serif;
+      font-family: Futura, Arial, sans-serif;
       margin: 40px;
-
-      background-color: #c14b63;
-
-     background-image:
-     linear-gradient(#f4d6df 1px, transparent 1px),
-     linear-gradient(90deg, #f4d6df 1px, transparent 1px);
-
-        background-size: 30px 30px;
+      background-color: #e5f87a;
+      background-image:
+        linear-gradient(#f4d6df 1px, transparent 1px),
+        linear-gradient(90deg, #f4d6df 1px, transparent 1px);
+      background-size: 30px 30px;
     }
-
     h1 {
-        text-align: center;
+      text-align: center;
     }
-
-    .subtitle {
-        text-align: center;
+    p {
+      text-align: center;
     }
-
     .buttons {
       text-align: center;
-      margin-top: 25px;
+      margin: 25px;
     }
-
     button {
-      margin: 5%;
-      padding: 8px 12px;
       font-family: inherit;
+      padding: 8px 12px;
     }
-
     #collection {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 20px;
-      margin-top: 30px;
+      gap: 25px;
     }
-
     .item {
       width: 180px;
-      text-align: center;
       transition: 0.5s;
     }
-
     .item img {
       width: 100%;
       cursor: pointer;
     }
-
-    .info {
-        display: none;
-        font-size: 12px;
-        margin-top: 8px; 
-    }
-
-    .item.show .info {
-        display: block;
-    }
-
   </style>
 </head>
 
 <body>
-
-  <h1>How Else Might a Collection Be Arranged?</h1>
-
-  <p class="subtitle">
-    A small experiment using objects from my own ephemera collection.
+  <h1>WHAT IS VALUABLE TO YOU?</h1>
+  <p>
+    These are works I saw at MoMA.<br>
+    Click an image and give it a personal value from 1–5.<br>
+    Is there an imposter among them?
   </p>
 
   <div class="buttons">
     <button onclick="randomize()">RANDOM?</button>
-    <button onclick="valueMode()">PERSONAL VALUE?</button>
   </div>
-
+  
   <div id="collection">
-
-    <div class="item" data-value="1">
-      <img src="Images/3dglasses.png" onclick="showInfo(this)">
-      <p class="info">
-        3D Glasses<br>
-        Personal value: 1
-      </p>
+    <div class="item">
+      <img src="pieces/waterlilies.jpg"
+           onclick="rate(this)">
     </div>
 
-    <div class="item" data-value="4">
-      <img src="Images/candywrapper.png" onclick="showInfo(this)">
-      <p class="info">
-        Candy Wrapper<br>
-        Personal value: 4
-      </p>
+    <div class="item">
+      <img src="pieces/threepuppies.jpg"
+           onclick="rate(this)">
     </div>
 
-    <div class="item" data-value="5">
-      <img src="Images/cerealbox.png" onclick="showInfo(this)">
-      <p class="info">
-        Cereal Box<br>
-        Personal value: 5
-      </p>
+    <div class="item">
+      <img src="pieces/streetandthestore.jpg"
+           onclick="rate(this)">
     </div>
 
-    <div class="item" data-value="3">
-      <img src="Images/chocolatefrog.png" onclick="showInfo(this)">
-      <p class="info">
-        Chocolate Frog<br>
-        Personal value: 3
-      </p>
+    <div class="item">
+      <img src="pieces/starrynight.jpg"
+           onclick="rate(this)">
     </div>
 
-    <div class="item" data-value="2">
-      <img src="Images/museumguide.png" onclick="showInfo(this)">
-      <p class="info">
-        Museum Guide<br>
-        Personal value: 2
-      </p>
+    <div class="item">
+      <img src="pieces/seraut.jpg"
+           onclick="rate(this)">
+    </div>
+    
+    <div class="item">
+      <img src="pieces/rothko.png"
+           onclick="rate(this)">
     </div>
 
-    <div class="item" data-value="1">
-      <img src="Images/museumticket.png" onclick="showInfo(this)">
-      <p class="info">
-        Museum Ticket<br>
-        Personal value: 1
-      </p>
+    <div class="item">
+      <img src="pieces/pollock.jpg"
+           onclick="rate(this)">
     </div>
 
-    <div class="item" data-value="5">
-      <img src="Images/planeticket.png" onclick="showInfo(this)">
-      <p class="info">
-        Plane Ticket<br>
-        Personal value: 5
-      </p>
+    <div class="item">
+      <img src="pieces/picasso.png"
+           onclick="rate(this)">
     </div>
 
-    <div class="item" data-value="3">
-      <img src="Images/pokemoncard.png" onclick="showInfo(this)">
-      <p class="info">
-        Pokemon Card<br>
-        Personal value: 3
-      </p>
+    <div class="item">
+      <img src="pieces/persistenceofmemory.jpg"
+           onclick="rate(this)">
     </div>
 
-    <div class="item" data-value="2">
-      <img src="Images/rockclimbing.png" onclick="showInfo(this)">
-      <p class="info">
-        Rock Climbing<br>
-        Personal value: 2
-      </p>
+    <div class="item">
+      <img src="pieces/mondrianchair.png"
+           onclick="rate(this)">
     </div>
 
-    <div class="item" data-value="4">
-      <img src="Images/snoopytag.png" onclick="showInfo(this)">
-      <p class="info">
-        Snoopy Tag<br>
-        Personal value: 4
-      </p>
+    <div class="item">
+      <img src="pieces/garbagecan.jpg"
+           onclick="rate(this)">
+    </div>
+    
+    <div class="item">
+      <img src="pieces/falsemirror.jpg"
+           onclick="rate(this)">
+    </div>
+
+    <div class="item">
+      <img src="pieces/chickensoup.jpg"
+           onclick="rate(this)">
+    </div>
+
+    <div class="item">
+      <img src="pieces/actuallymine.jpeg"
+           onclick="rate(this)">
+
     </div>
 
   </div>
 
   <script>
 
-    const collection = document.getElementById("collection");
+    const collection =
+      document.getElementById("collection");
 
-    const items = document.querySelectorAll(".item");
+    const items =
+      document.querySelectorAll(".item");
 
-    function showInfo(image) {
-        let item=image.parentElement;
-        item.classList.toggle("show");
+    function rate(image) {
+      let value =
+        prompt("How much do you value this work? 1–5");
+      let item =
+        image.parentElement;
+      if (value == 1) {
+        item.style.width = "100px";
+      }
+      if (value == 2) {
+        item.style.width = "200px";
+      }
+      if (value == 3) {
+        item.style.width = "300px";
+      }
+      if (value == 4) {
+        item.style.width = "400px";
+      }
+      if (value == 5) {
+        item.style.width = "500px";
+      }
+
     }
 
     function randomize() {
 
-      let list = Array.from(items);
+      let list =
+        Array.from(items);
+      list.sort(function() {
+        return Math.random() - 0.5;
+      });
 
-      list.sort(() => Math.random() - 0.5);
-
-      list.forEach(item => {
-        item.style.width = "180px";
+      list.forEach(function(item) {
         collection.appendChild(item);
       });
-
-    }
-
-    function valueMode() {
-
-      items.forEach(item => {
-
-        let value = Number(item.dataset.value);
-
-        if (value == 1) {
-          item.style.width = "50px";
-        }
-
-        if (value == 2) {
-          item.style.width = " 100px";
-        }
-
-        if (value == 3) {
-          item.style.width = "150px";
-        }
-
-        if (value == 4) {
-          item.style.width = "200px";
-        }
-
-        if (value == 5) {
-          item.style.width = "250px";
-        }
-
-      });
-
     }
 
   </script>
 
 </body>
+
 </html>
